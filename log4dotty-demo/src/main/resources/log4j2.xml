@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+    <Appenders>
+        <Console name="stdout">
+            <PatternLayout>
+                <pattern>%date{HH:mm:ss} %-5level %logger{0} - %msg%n</pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="rocks.heikoseeberger.log4dottydemo" level="${sys:loglevel.log4dotty-demo:-debug}"
+                additivity="false">
+            <AppenderRef ref="stdout"/>
+        </Logger>
+        <Logger name="log4dotty-demo" level="${sys:loglevel.log4dotty-demo:-debug}"
+                additivity="false">
+            <AppenderRef ref="stdout"/>
+        </Logger>
+
+        <Root level="${sys:loglevel.root:-error}">
+            <AppenderRef ref="stdout"/>
+        </Root>
+    </Loggers>
+</Configuration>
