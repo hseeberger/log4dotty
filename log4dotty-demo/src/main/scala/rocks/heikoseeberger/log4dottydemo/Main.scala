@@ -23,6 +23,11 @@ object Main {
 
     def main(args: Array[String]): Unit = {
       val logger = Logger("log4dotty-demo")
-      logger.debug("Hello, log4dotty!")
+      logger.debug(hello())
+    }
+
+    private def hello() = {
+      println("********** hello() was called! **********")
+      "Hello, log4dotty!"
     }
 }
