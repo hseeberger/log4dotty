@@ -2,6 +2,18 @@
 
 This is – at least at this moment in time – just an experiment to learn Dotty / Scala 3. This software is neither API stable nor tested, i.e. by no means production ready. 
 
+The idea is to provide a macro based simplified yet efficient logging API which allows to write code like 
+
+``` scala
+logger.debug("Hello")
+```
+
+which gets compiled to the enabled-checked variant
+
+``` scala
+if (logger.isDebugEnabled) logger.debug("Hello")
+```
+
 ## Contribution policy ##
 
 Contributions via GitHub pull requests are gladly accepted from their original author. Along with
