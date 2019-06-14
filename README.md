@@ -1,6 +1,6 @@
 # log4dotty #
 
-Welcome to log4dotty!
+This is – at least at this moment in time – just an experiment to learn Dotty / Scala 3. This software is neither API stable nor tested, i.e. by no means production ready. 
 
 ## Contribution policy ##
 
