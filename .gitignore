@@ -23,6 +23,9 @@ target
 .ensime_lucene
 .ensime_cache
 
+# VSCode
+.dotty-ide*
+
 # Mac
 .DS_Store
 
