@@ -19,10 +19,9 @@ package rocks.heikoseeberger.log4dottydemo
 import rocks.heikoseeberger.log4dotty._
 import delegate rocks.heikoseeberger.log4dotty._
 
-object Main {
+object Main extends Logging {
 
     def main(args: Array[String]): Unit = {
-      val logger = Logger("log4dotty-demo")
       logger.debug(hello())
     }
 

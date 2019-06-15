@@ -19,9 +19,17 @@ package rocks.heikoseeberger.log4dotty
 import org.apache.logging.log4j.{ LogManager, Logger => Underlying }
 import scala.quoted.Expr
 
+trait Logging {
+  protected val logger: Logger =
+    Logger(getClass)
+}
+
 object Logger {
-  def apply(name: String): Logger = 
+  def apply(name: String): Logger =
     new Logger(LogManager.getLogger(name))
+
+  def apply(clazz: Class[_]): Logger =
+    new Logger(LogManager.getLogger(clazz))
 }
 
 final class Logger private (underlying: Underlying) {
