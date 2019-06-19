@@ -16,8 +16,7 @@
 
 package rocks.heikoseeberger.log4dottydemo
 
-import rocks.heikoseeberger.log4dotty._
-import delegate rocks.heikoseeberger.log4dotty._
+import rocks.heikoseeberger.log4dotty.Logging
 
 object Main extends Logging {
 
