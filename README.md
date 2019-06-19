@@ -1,14 +1,14 @@
 # log4dotty #
 
-This is – at least at this moment in time – just an experiment to learn Dotty / Scala 3. This software is neither API stable nor tested, i.e. by no means production ready. 
+This is – at least at this moment in time – just an experiment to learn Scala 3 (a.k.a. Dotty). This software is neither API stable nor tested, i.e. by no means production ready.
 
-The idea is to provide a macro based simplified yet efficient logging API which allows to write code like 
+The idea is to provide logging API backed by Scala 3 metaprogramming facilities, which allows to write code like:
 
 ``` scala
 logger.debug("Hello")
 ```
 
-which gets compiled to the enabled-checked variant
+This gets compiled to the check-enabled variant:
 
 ``` scala
 if (logger.isDebugEnabled) logger.debug("Hello")
