@@ -41,7 +41,7 @@ lazy val `log4dotty-demo` =
 lazy val library =
   new {
     object Version {
-      val log4j      = "2.11.2"
+      val log4j      = "2.12.1"
       val scalaCheck = "1.14.0"
       val scalaTest  = "3.0.8"
     }
@@ -61,7 +61,7 @@ lazy val settings =
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "0.16.0-RC3",
+    scalaVersion := "0.20.0-RC1",
     organization := "rocks.heikoseeberger",
     organizationName := "Heiko Seeberger",
     startYear := Some(2019),
@@ -72,8 +72,6 @@ lazy val commonSettings =
       "-language:_",
       "-target:jvm-1.8",
       "-encoding", "UTF-8",
-      // "-Ypartial-unification",
-      // "-Ywarn-unused-import",
     ),
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),

@@ -20,12 +20,11 @@ import rocks.heikoseeberger.log4dotty.Logging
 
 object Main extends Logging {
 
-    def main(args: Array[String]): Unit = {
-      logger.debug(hello())
-    }
+  def main(args: Array[String]): Unit =
+    logger.debug(hello())
 
-    private def hello() = {
-      println("********** hello() was called! **********")
-      "Hello, log4dotty!"
-    }
+
+  private def hello() =
+    println("********** hello() was called! **********")
+    "Hello, log4dotty!"
 }

@@ -10,11 +10,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="rocks.heikoseeberger.log4dottydemo" level="${sys:loglevel.log4dotty-demo:-info}"
-                additivity="false">
-            <AppenderRef ref="stdout"/>
-        </Logger>
-        <Logger name="log4dotty-demo" level="${sys:loglevel.log4dotty-demo:-info}"
+        <Logger name="rocks.heikoseeberger.log4dottydemo" level="${sys:loglevel.log4dotty-demo:-debug}"
                 additivity="false">
             <AppenderRef ref="stdout"/>
         </Logger>
