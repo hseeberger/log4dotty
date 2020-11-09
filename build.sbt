@@ -5,7 +5,7 @@
 lazy val `log4dotty-root` =
   project
     .in(file("."))
-    .settings(settings)
+    .settings(commonSettings)
     .settings(
       Compile / unmanagedSourceDirectories := Seq.empty,
       Test / unmanagedSourceDirectories    := Seq.empty,
@@ -16,7 +16,7 @@ lazy val `log4dotty-root` =
 lazy val log4dotty =
   project
     .enablePlugins(AutomateHeaderPlugin)
-    .settings(settings)
+    .settings(commonSettings)
     .settings(
       libraryDependencies ++= Seq(
         library.log4jApi,
@@ -26,7 +26,7 @@ lazy val log4dotty =
 lazy val `log4dotty-demo` =
   project
     .enablePlugins(AutomateHeaderPlugin)
-    .settings(settings)
+    .settings(commonSettings)
     .dependsOn(log4dotty)
     .settings(
       libraryDependencies ++= Seq(
@@ -41,27 +41,22 @@ lazy val `log4dotty-demo` =
 lazy val library =
   new {
     object Version {
-      val log4j      = "2.12.1"
-      val scalaCheck = "1.14.0"
-      val scalaTest  = "3.0.8"
+      val log4j = "2.13.3"
+      val mUnit = "0.7.16"
     }
-    val log4jApi   = "org.apache.logging.log4j" %  "log4j-api"  % Version.log4j
-    val log4jCore  = "org.apache.logging.log4j" %  "log4j-core" % Version.log4j
-    val scalaCheck = "org.scalacheck"           %% "scalacheck" % Version.scalaCheck
-    val scalaTest  = "org.scalatest"            %% "scalatest"  % Version.scalaTest
+    val log4jApi        = "org.apache.logging.log4j" %  "log4j-api"        % Version.log4j
+    val log4jCore       = "org.apache.logging.log4j" %  "log4j-core"       % Version.log4j
+    val mUnit           = "org.scalameta"            %% "munit"            % Version.mUnit
+    val mUnitScalaCheck = "org.scalameta"            %% "munit-scalacheck" % Version.mUnit
   }
 
 // *****************************************************************************
 // Settings
 // *****************************************************************************
 
-lazy val settings =
-  commonSettings ++
-  scalafmtSettings
-
 lazy val commonSettings =
   Seq(
-    scalaVersion := "0.20.0-RC1",
+    scalaVersion := "3.0.0-M1",
     organization := "rocks.heikoseeberger",
     organizationName := "Heiko Seeberger",
     startYear := Some(2019),
@@ -69,15 +64,8 @@ lazy val commonSettings =
     scalacOptions ++= Seq(
       "-unchecked",
       "-deprecation",
-      "-language:_",
-      "-target:jvm-1.8",
       "-encoding", "UTF-8",
     ),
-    Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
-    Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
+    testFrameworks += new TestFramework("munit.Framework"),
+    // scalafmtOnCompile := true,
 )
-
-lazy val scalafmtSettings =
-  Seq(
-    scalafmtOnCompile := false,
-  )

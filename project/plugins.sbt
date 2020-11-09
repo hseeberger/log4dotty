@@ -1,4 +1,4 @@
-addSbtPlugin("com.dwijnand"      % "sbt-dynver"   % "4.0.0")
-addSbtPlugin("ch.epfl.lamp"      % "sbt-dotty"    % "0.3.4")
-addSbtPlugin("de.heikoseeberger" % "sbt-header"   % "5.3.1")
-addSbtPlugin("org.scalameta"     % "sbt-scalafmt" % "2.2.1")
+addSbtPlugin("ch.epfl.lamp"      % "sbt-dotty"    % "0.4.5")
+addSbtPlugin("com.dwijnand"      % "sbt-dynver"   % "4.1.1")
+addSbtPlugin("de.heikoseeberger" % "sbt-header"   % "5.6.0")
+addSbtPlugin("org.scalameta"     % "sbt-scalafmt" % "2.4.2")

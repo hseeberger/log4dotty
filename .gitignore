@@ -1,7 +1,11 @@
+# This project
+scratch.scala
+
 # sbt
 lib_managed
 project/project
 target
+.bsp
 
 # Worksheets (Eclipse or IntelliJ)
 *.sc
@@ -23,7 +27,7 @@ target
 .ensime_lucene
 .ensime_cache
 
-# VSCode
+# VS Code
 .dotty-ide*
 
 # Mac
@@ -39,3 +43,7 @@ snapshots
 
 # jenv
 .java-version
+
+# Metals
+.metals
+.bloop
